@@ -32,4 +32,4 @@ RUN curl -LO https://www.apache.org/dist/hadoop/common/hadoop-$HADOOP_VER/hadoop
     cd /tmp/hadoop-$HADOOP_VER-src; \
     mvn package -Pdist,native -DskipTests -Dtar
 
-RUN tar -czv /nativelib.tar.gz /tmp/hadoop-$HADOOP_VER-src/hadoop-dist/target/hadoop-$HADOOP_VER/lib/native; \
+RUN tar -czv /nativelib.tar.gz /tmp/hadoop-$HADOOP_VER-src/hadoop-dist/target/hadoop-$HADOOP_VER/lib/native
