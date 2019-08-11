@@ -16,8 +16,7 @@ RUN curl -LO 'https://d3pxv6yz143wms.cloudfront.net/8.222.10.1/java-1.8.0-amazon
 ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-amazon-corretto
 
 # protobuf
-RUN curl -LO https://github.com/google/protobuf/releases/download/v2.5.0/protobuf-2.5.0.tar.gz | tar zxf -C /tmp; \
-    tar -xzf protobuf-2.5.0.tar.gz -C /tmp; \
+RUN curl -L https://github.com/google/protobuf/releases/download/v2.5.0/protobuf-2.5.0.tar.gz | tar zxf -C /tmp; \
     cd /tmp/protobuf-2.5.0; \
     ./configure --prefix=/usr; \
     make; \
@@ -25,7 +24,7 @@ RUN curl -LO https://github.com/google/protobuf/releases/download/v2.5.0/protobu
 
 ENV HADOOP_VER 3.1.2
 # hadoop
-RUN curl -LO https://www.apache.org/dist/hadoop/common/hadoop-$HADOOP_VER/hadoop-$HADOOP_VER-src.tar.gz | tar zxf -C /tmp; \
+RUN curl -L https://www.apache.org/dist/hadoop/common/hadoop-$HADOOP_VER/hadoop-$HADOOP_VER-src.tar.gz | tar zxf -C /tmp; \
     cd /tmp/hadoop-$HADOOP_VER-src; \
     mvn package -Pdist,native -DskipTests -Dtar
 
