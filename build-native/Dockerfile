@@ -32,4 +32,6 @@ RUN curl -LO https://www.apache.org/dist/hadoop/common/hadoop-$HADOOP_VER/hadoop
     cd /tmp/hadoop-$HADOOP_VER-src; \
     mvn package -Pdist,native -DskipTests -Dtar
 
-RUN tar -czv /nativelib.tar.gz /tmp/hadoop-$HADOOP_VER-src/hadoop-dist/target/hadoop-$HADOOP_VER/lib/native
+RUN mv /tmp/hadoop-$HADOOP_VER-src/hadoop-dist/target/hadoop-$HADOOP_VER/lib/native /; \
+    rm -rf /tmp/hadoop-$HADOOP_VER-src; \
+    rm -rf /tmp/protobuf-2.5.0
