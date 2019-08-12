@@ -1,6 +1,6 @@
-FROM himaoka/hadoop-nativelibs:3.1.2 as libs
+FROM himaoka/hadoop-nativelibs:2.8.5 as libs
 
-FROM debian:buster
+FROM debian:stretch
 MAINTAINER himaoka
 
 USER root
@@ -24,7 +24,7 @@ RUN curl -LO 'https://d3pxv6yz143wms.cloudfront.net/8.222.10.1/java-1.8.0-amazon
     rm java-1.8.0-amazon-corretto-jdk_8.222.10-1_amd64.deb
 ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-amazon-corretto
 
-ENV HADOOP_VER 3.1.2
+ENV HADOOP_VER 2.8.5
 # hadoop
 RUN curl -L https://www.apache.org/dist/hadoop/common/hadoop-$HADOOP_VER/hadoop-$HADOOP_VER.tar.gz | tar -xz -C /usr/local/; \
     cd /usr/local && ln -s ./hadoop-$HADOOP_VER hadoop; \
