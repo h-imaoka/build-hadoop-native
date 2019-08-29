@@ -7,7 +7,7 @@ USER root
 
 # install dev tools
 RUN apt update; \
-    apt install -y curl tar sudo openssh-server openssh-client rsync
+    apt install -y curl tar sudo openssh-server openssh-client rsync java-common
 # update libselinux. see https://github.com/sequenceiq/hadoop-docker/issues/14
 #RUN yum update -y libselinux
 
@@ -91,10 +91,10 @@ ENV BOOTSTRAP /etc/docker-startup/bootstrap.sh
 # CMD ["/etc/docker-startup/entrypoint.sh"]
 
 # Hdfs ports
-EXPOSE 50010 50020 50070 50075 50090 8020 9000
+EXPOSE 9870
 # Mapred ports
-EXPOSE 10020 19888
+EXPOSE 19888
 #Yarn ports
-EXPOSE 8030 8031 8032 8033 8040 8042 8088
+EXPOSE 8088
 #Other ports
 EXPOSE 49707 2122
