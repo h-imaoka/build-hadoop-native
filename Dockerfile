@@ -7,7 +7,7 @@ USER root
 
 # install dev tools
 RUN apt update; \
-    apt install -y curl tar sudo openssh-server openssh-client rsync java-common
+    apt install -y curl tar sudo openssh-server openssh-client rsync java-common libssl-dev libsnappy1v5 libzstd1 libisal2 
 # update libselinux. see https://github.com/sequenceiq/hadoop-docker/issues/14
 #RUN yum update -y libselinux
 
